@@ -1,0 +1,15 @@
+{
+  "Comment": "EBS gp2 to gp3 automation",
+  "StartAt": "InvokeLambda",
+  "States": {
+    "InvokeLambda": {
+      "Type": "Task",
+      "Resource": "arn:aws:states:::lambda:invoke",
+      "Parameters": {
+        "FunctionName": "EBS-GP2-GP3-Lambda",
+        "Payload.$": "$"
+      },
+      "End": true
+    }
+  }
+}
